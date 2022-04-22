@@ -75,3 +75,19 @@ body main article h2 {
         padding: 10vw;
     }
 }
+
+
+.agua:before {
+    position: fixed;
+    content: '';
+    bottom: 2vh;
+    right: 2vh;
+    /* width = height x ratio */
+    width: 61.3333vh;
+    height: 85.3333vh;
+    opacity: 0.2;
+    background-image: url(../../../svg/famous_superhero_catwoman.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
