@@ -1,6 +1,5 @@
 * {
     position: absolute;
-    content: '';
     top: 0;
     left: 0;
     width: 100%;
@@ -11,20 +10,20 @@
     background-position: 50% 50%;
     background-size: cover;
     opacity: 100%;
-    -webkit-filter: brightness(1) blur(2px) grayscale(0.8);
-    filter: brightness(1) blur(2px) grayscale(0.8);
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-origin: border-box;
 
 }
+
+
+
 
 header.portada div {
     align-content: center;
 
 }
 
-div #matrix {
+#matrix {
     display: inline-block;
     align-content: center;
     align-items: center;
@@ -34,3 +33,10 @@ div #matrix {
 
 }
 
+articulo1 {
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+
+}
