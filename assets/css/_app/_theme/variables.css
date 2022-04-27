@@ -42,9 +42,9 @@
     ------------------------------------
 
     */
-    --color-b: #F8E16C;
-    --color-t1: #FFC2B4;
-    --color-t2: #FB8F67;
+    --color-b: #EA9DF2;
+    --color-t1: #C0FAA1;
+    --color-t2: #FFF1A4;
     /* bootstrap Colors */
     --color-primary: #91A6FF;
     --color-secondary: #FF88DC;
@@ -87,4 +87,11 @@
     --xxl: 90rem;
     /* 1600px */
     --xxxl: 100rem;
+    
+    /* 
+    --- imagenes del sitio ---
+    */
+    
+    /*Categoria CSS, Página textos */
+    --img_css_textos : url(https://www.freepik.es/vector-gratis/fondo-onda-vapor-vintage-lineal_13156549.htm#query=aesthetic&position=2&from_view=search);
 }
