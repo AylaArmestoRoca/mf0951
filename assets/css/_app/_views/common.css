@@ -42,6 +42,128 @@
     font-size: small;
 }
 
+.image-before:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-origin: border-box;
+}
+
+/* Marca de agua */
+
+.agua:before {
+    position: fixed;
+    content: '';
+    /* top : 10vh; */
+    bottom: 5vh;
+    right: 5vh;
+    /* ratio del logo 1020/495 */
+    height: 20vh;
+    /* width de la marca de agua =  height * ratio */
+    width: 41.21vh;
+    opacity: 0.2;
+    background-image: url('../../../svg/Olympic_Rings_clip_art.svg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Estilos iconos sociales */
+
+section.sociales ul li {
+    display: inline-block;
+}
+
+.social {
+    /* background-image: url('../../../svg/social/icon-facebook.svg'); */
+    margin: 0;
+    /* background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat; */
+
+}
+
+.social svg {
+    width: 5em;
+    height: 5em;
+    fill: white;
+}
+
+pruebita:hover {
+    -webkit-animation-duration: calc(1s * 0.75);
+    animation-duration: calc(1s * 0.75);
+    -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
+    animation-duration: calc(var(--animate-duration) * 0.75);
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+
+}
+
+
+article.animaciones ul li {
+    display: inline-block;
+    margin: 0 0.5rem;
+
+    font-weight: bold;
+    font-size: x-large;
+    color: steelblue;
+}
+
+header.portada {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+}
+
+.portada:before {
+    opacity: 1;
+    -webkit-filter: brightness(1) blur(2px) grayscale(0.8);
+    filter: brightness(1) blur(2px) grayscale(0.8);
+}
+
+.portada.textos:before {
+    background-image: var(--img_cat1_img1);
+}
+.portada.imagenes:before {
+    background-image: var(--img_cat1_img2);
+}
+
+header.portada h2 {
+    position: absolute;
+    margin: 0;
+    padding: 1em;
+    width: 100%;
+    background: rgba(51, 53, 119, 0.5);
+    top: 30%;
+    text-align: center;
+    color: white;
+}
+
+body.nocturno {
+    background-color: black;
+    color: white;
+}
+
+body.nocturno a {
+    color: yellow;
+}
+
+body.nocturno a:target,
+body.nocturno a:focus,
+body.nocturno a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+
+
 body {
     background-color: var(--bg-body);
     color: var(--color-body);
@@ -75,86 +197,3 @@ body main article h2 {
         padding: 10vw;
     }
 }
-
-.image-before:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-attachment: scroll;
-    background-origin: border-box;
-    
-}
-
-.agua:before {
-    position: fixed;
-    content: '';
-    bottom: 2vh;
-    right: 2vh;
-    /* width = height x ratio */
-    width: 61.3333vh;
-    height: 85.3333vh;
-    opacity: 0.2;
-    background-image: url(../../../svg/famous_superhero_catwoman.png);
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.portada:before {
-    background-image: url();
-    opacity: 1;
-    - webkit-filter: brightness (1) blur(2px) grayscale (0.8); filter: brightness(1) blur(2px) grayscale(0.8);
-}
-portada.textos:before {
-    background-image: var (--img_css_textos);
-    
-}
-portada.image:before {
-    background-image: url(https://www.freepik.es/foto-gratis/fondo-azul-brillante-holografico-pastel-estetico_13301003.htm#query=aesthetic&position=7&from_view=search);
-    
-}
-
-header.portada h2 {
-    position: absolute
-        margin: 0;
-    padding: 1em;
-    width: 100%;
-    background: rgba (255,255,255, 0.5);
-    top: 25%;
-    text-align: center;
-    color: white;
-}
-header.portada {
-    position: absolute;
-    width: 100%;
-    height: 40vh;
-}
-
-header portada{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(https://cdn.pixabay.com/photo/2020/02/09/13/08/banner-4833105_960_720.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
-    opacity: 1;
-    -webkit-filter: brightness(1) blur(2px) grayscale(0.8);
-    filter: brightness(1) blur(2px) grayscale(0.8);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-origin: border-box;
-    
-}
-
-ul.sociales li {
-    display: inline-block;
-    
-}
-    
