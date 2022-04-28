@@ -152,4 +152,9 @@ header portada{
     background-origin: border-box;
     
 }
+
+ul.sociales li {
+    display: inline-block;
+    
+}
     
