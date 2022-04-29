@@ -197,3 +197,38 @@ body main article h2 {
         padding: 10vw;
     }
 }
+
+. social {
+    margin: 0;
+}
+.social svg{
+    width: 2em;
+    height: 5em;
+}
+
+footer .social svg {
+    fill: white;
+}
+
+figure.facebook svg {
+    fill: #3B5998;
+
+}
+
+figure.facebook:hover svg {
+    background-color: darkgray;
+    
+}
+
+figure.twitter svg {
+ fill: orange;
+}
+
+figure.twitter:hover svg {
+       background-color: #00ACEE;
+fill: white;
+}
+
+article.animaciones ul li {
+    
+}
