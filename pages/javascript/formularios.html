@@ -1,35 +1,31 @@
-<!-- Declaración del tipo de documento HTML, siempre en la 1ª línea -->
 <!DOCTYPE html>
-<!-- Elemento html. Atributos lenguaje y dirección de lectura -->
 <html lang="es" dir="ltr">
-<!-- Cabecera oculta del documento web que solo ven los robots -->
 
 <head>
-    <!-- Juego de caracteres de casi todos los idiomas humanos (incluidos ñ, tildes ...) -->
     <meta charset="utf-8" />
-    <!-- Escala inicial y renderizado _responsive_ por el ancho del dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Compatibilidad con Microsoft Explorer -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Indéxame NO y sígueme NO -->
     <meta name="robots" content="noIndex, noFollow" />
-    <!-- Breve descripción del sitio que se verá en los resultados de búsqueda -->
-    <meta name="description" content="Sitio web de prueba elaborado en el curso de Confección y Publicación de Páginas Web (IFCD0110). Unidad Formativa UF1303: Tratamiento de textos con CSS" />
-    <!-- Ruta al favicon -->
+    <meta name="description" content="Sitio web de prueba elaborado en el curso de Confección y Publicación de Páginas Web (IFCD0110). Unidad Formativa UF1306 Pruebas de funcionalidades y optimización de páginas web" />
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/vnd.microsoft.icon" />
-    <!-- Ruta a las hojas de estilos -->
+
     <link rel="stylesheet" href="../../assets/css/_common/_vendors/normalize.css" />
     <link rel="stylesheet" href="../../assets/css/_common/_vendors/animate.css" />
     <link rel="stylesheet" href="../../assets/css/_common/_utils/flexbox.css" />
     <link rel="stylesheet" href="../../assets/css/_common/_utils/visibilidad.css" />
     <link rel="stylesheet" href="../../assets/css/aplicado.css" />
 
-    <!-- Título de la pestaña del navegador -->
-    <title>Imágenes CSS | UF1303</title>
+    <!-- 1.b.- Verificar que eres el propietario del sitio web -->
+    <meta name="author" content="Sonia Álvarez" />
+
+
+    <title>UF1306 | Validación de Formularios</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="../assets/js/formularios3.js"></script>
 </head>
 
 <body>
-    <!-- El header es la cabecera de la página web lleva el único encabezado h1 de la página -->
     <header class="distribute">
         <a href="../../index.html" title="Inicio">
             <figure class="logo"></figure>
@@ -43,21 +39,21 @@
 
         <ul class="principal">
             <li>
-                <a href="../javascript/index.html">JavasScript</a>
+                <a href="index.html">JavasScript</a>
                 <ul>
                     <li>
-                        <a href="../javascript/formularios.html">Formularios</a>
+                        <a href="#">Formularios</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="index.html">CSS</a>
+                <a href="../css/index.html">CSS</a>
                 <ul>
                     <li>
-                        <a href="textos.html">Textos</a>
+                        <a href="../css/textos.html">Textos</a>
                     </li>
                     <li>
-                        <a href="#">Imágenes</a>
+                        <a href="../css/imagenes.html">Imágenes</a>
                     </li>
                     <li>
                         <a href="#">Vínculo 2.c</a>
@@ -73,66 +69,94 @@
         </ul>
     </nav>
     <main>
-        <section class="tema textos agua justify">
-            <header class="portada imagenes image-before">
-                <h2>Imágenes en CSS</h2>
-            </header>
-            <article>
-                <h3>Referencias teóricas</h3>
-                <p><strong>Referencias</strong>: </p>
-                <ul>
+        <article>
+            <h3>Formulario de Contacto</h3>
+
+            <form action="enviado.html" method="post" class="form" id="form">
+                <fieldset>
+                    <legend>Formulario de Contacto</legend>
+                    <ul>
+                        <li>
+                            <label for="name">Nombre</label>
+                            <!-- pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}" -->
+                            <!-- title="Sólo se admiten letras del alfabeto español y espacios en blanco" -->
+                            <input type="text" placeholder="Tu nombre" name="name" id="name" required />
+                        </li>
+                        <li>
+                            <label for="email">E-mail</label>
+                            <input type="email" placeholder="Correo electrónico" name="email" id="email" required />
+                        </li>
+                        <li>
+                            <label for="tfno">Teléfono</label>
+                            <input type="text" placeholder="Teléfono" name="tfno" id="tfno" />
+                        </li>
+                        <li>
+                            <label for="edad">Edad</label>
+                            <input type="number" placeholder="Edad" id="edad" name="edad" />
+                        </li>
+                        <li class="radio">
+                            <input type="radio" name="genero" value="h" id="hombre" />
+                            <label for="hombre">Hombre</label>
+                        </li>
+                        <li class="radio">
+                            <input type="radio" name="genero" value="m" id="mujer" />
+                            <label for="mujer">Mujer</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="acepto" id="acepto" />
+                            <label for="acepto">Acepto el tratamiento de mis datos personales. Más información en
+                                <a href="#">Política de tratamiento de datos personales</a>
+                            </label>
+                        </li>
+                        <li class="textarea">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea placeholder="Escribe tu mensaje aquí" name="mensaje" id="mensaje" cols="30" rows="5" required></textarea>
+                        </li>
+                    </ul>
+                </fieldset>
+                <p id="errores"></p>
+
+                <ul class="enviar">
                     <li>
-                        <a href="../assets/pdf/UF1303_Elaboracion-hojas-de-estilo.pdf>">
-                            UF1303 - Elaboración de hojas de estilos
-                        </a>
+                        <input type="submit" value="Enviar" id="enviar" />
                     </li>
                     <li>
-                        <a href="../assets/pdf/CSS_Manual_rapido.pdf>">
-                            Manual Rápido de CSS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../assets/pdf/CSS_Guia_ref_rap.pdf>">
-                            Guía de referencia rápida CSS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image">
-                            background-image | MDN Web Docs (moz://a)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://uniwebsidad.com/libros/css/capitulo-8">
-                            Introducción a CSS > Imágenes | uniwebsidad
-                        </a>
+                        <input type="reset" value="Borrar" />
                     </li>
                 </ul>
-            </article>
-            <article>
-                <h2>Imágenes en CSS</h2>
-                <p>
-                    La propiedad background-image se emplea para establecer la imagen de fondo de cada elemento. La imagen se muestra en la zona que ocupan el contenido y el relleno del elemento, justo hasta su borde.
-                </p>
-                <p>
-                    Para indicar la imagen que se muestra como fondo de un elemento, se utiliza una URL. Los navegadores no restringen el tipo de URL que se pueden utilizar, por lo que pueden ser URL externas/internas y URL relativas/absolutas.
-                </p>
-                <p>
-                    La URL de la imagen que se quiere mostrar se incluye dentro de los paréntesis de la palabra url(). De forma opcional, el valor de la URL se puede encerrar entre comillas simples o entre comillas dobles.
-                </p>
-                <p>
-                    Por defecto el CSS repite ( background-repeat ) la imagen de fondo ( background-image ) en todas las direcciones, tantas veces como fuera necesario, hasta cubrir completamente el elemento. Es exactamente lo que hacen los patrones. Si la imagen es más grande de lo necesario podemos utilizar la propiedad background-sizestar para establecer el tamaño de la imagen que se repite
-                </p>
-                <h3>Elementos SVG</h3>
-                <p>
-                    Si los elementos svg están guardados en documentos .svg externos podemos utilizarlos como imagen de fondo de la misma manera como lo hacemos con las imágenes jpg, png, gif:
-                </p>
-            </article>
+            </form>
+        </article>
 
-            <article class="imagen">
-                <h2>Ejemplos de imágenes con CSS</h2>
-                <p>Aplicando opacidad</p>
-            </article>
-        </section>
+        <article>
+            <h3>Cambiar contraseña</h3>
+            <form action="enviado.html" method="post" class="form" id="cambiarclave">
+                <fieldset>
+                    <legend>Resetear contraseña</legend>
+                    <ul>
+                        <li>
+                            <label for="usuario">Usuario</label>
+                            <input type="email" name="usuario" id="usuario" placeholder="Tu cuenta de correo" />
+                        </li>
+                        <li>
+                            <label for="contrasinal">Nueva contraseña</label>
+                            <input type="password" name="contrasinal" id="contrasinal" placeholder="Contraseña" />
+                        </li>
+                        <li>
+                            <label for="repetircontrasinal">Repetir contraseña</label>
+                            <input type="password" name="repetircontrasinal" id="repetircontrasinal" placeholder="Misma contraseña" />
+                        </li>
+                    </ul>
+                </fieldset>
+                <ul class="enviar">
+                    <li>
+                        <input type="submit" id="cambiarcontrasinal" value="Cambiar contraseña" />
+                    </li>
+                    <li>
+                        <input type="reset" value="Borrar" />
+                    </li>
+                </ul>
+            </form>
+        </article>
     </main>
     <footer>
         <h2 class="pechado">Pie de página</h2>
@@ -177,8 +201,8 @@
                             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" width="16" height="16" viewBox="0 0 155.139 155.139">
 
                                 <path d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184
-                         		c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452
-                         		v20.341H37.29v27.585h23.814v70.761H89.584z" />
+                                c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452
+                                v20.341H37.29v27.585h23.814v70.761H89.584z" />
                             </svg>
 
                         </figure>
@@ -213,7 +237,6 @@
             </ul>
         </section>
     </footer>
-
-    </body>
+</body>
 
 </html>
